@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+:root {
+	color-scheme: dark;
+}
+
+html,
+body,
+#root {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	background: #0f172a;
+	color: #e2e8f0;
+	font-family: "Space Grotesk", "Satoshi", "Segoe UI", sans-serif;
+}
+
+* {
+	scrollbar-width: thin;
+	scrollbar-color: rgba(148, 163, 184, 0.45) transparent;
+}
