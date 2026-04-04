@@ -3,8 +3,8 @@ const roomManager = require('../utils/roomManager');
 function initSocketServer(httpserver) {
   const io = new Server(httpserver, {
     cors: {
-      origin: "https://your-frontend-url.vercel.app",
-       credentials: true,
+      origin: process.env.CORS_ORIGIN,
+      credentials: true,
     }
   });
 
@@ -19,7 +19,7 @@ function initSocketServer(httpserver) {
 
       const room = roomManager.createOrJoinRoom(roomId, socket.id);
 
-      
+
       socket.emit('code-update', room.code);
       socket.to(roomId).emit('user-joined', socket.id);
 
@@ -42,7 +42,7 @@ function initSocketServer(httpserver) {
     socket.on('disconnect', () => {
       console.log('User disconnected: ' + socket.id);
 
-      if(socket.roomId) {
+      if (socket.roomId) {
         roomManager.removeUser(socket.roomId, socket.id);
       }
 
