@@ -52,5 +52,13 @@ CodeCollab is a real-time collaborative coding platform that allows multiple use
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/Divyaraj12-prog/codecollab.git
+git clone https://github.com/Divyaraj12-prog/codecollab-realtime-code-editor
 cd codecollab
+
+cd Frontend
+npm install
+npm run dev
+
+cd Backend
+npm install
+node server.js
